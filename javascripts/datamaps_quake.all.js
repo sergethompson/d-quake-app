@@ -417,7 +417,7 @@
           return i * 100; 
         })                                                              //changes time to put bubbles on screen
           .attr('r', function ( datum ) {
-            return .5*Math.exp(datum.magnitude)/Math.exp(datum.magnitude*.6);
+            return .45*Math.exp(datum.magnitude)/Math.exp(datum.magnitude*.45);
           });
 
     bubbles.exit()
