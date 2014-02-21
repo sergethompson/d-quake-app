@@ -29,7 +29,7 @@
         popupTemplate: function(geography, data) {
           return '<div class="hoverinfo"><strong>' + data.name + '</strong></div>';
         },
-        fillOpacity: 0.75,
+        fillOpacity: 0.25,
         animate: true,
         highlightOnHover: true,
         highlightFillColor: '#FC8D59',
@@ -348,14 +348,33 @@
         .attr('data-info', function(d) {
           return JSON.stringify(d);
         })
-        .style('stroke', options.borderColor)
-        .style('stroke-width', options.borderWidth)
-        .style('fill-opacity', options.fillOpacity)
-        // .style('fill', function ( datum ) {
+        // .style('stroke', options.borderColor)                        //Commented out border property
+        // .style('stroke-width', options.borderWidth)
+        .style('fill-opacity', function(datum){
+          if( datum.magnitude > 8 ){
+            return .8
+          } else if (datum.magnitude > 7){
+            return .5
+          } else {
+            return options.fillOpacity
+          }
+        })
+
+
+
+        // .style('fill', function ( datum ) {                          //Old way to change color of quakes
         //   var fillColor = fillData[ datum.fillKey ];
         //   return fillColor || fillData.defaultFill;
         // })
-        .style('fill', 'blue')
+        .style('fill', function(datum){
+          if( datum.magnitude > 8 ){
+            return "red"
+          } else if (datum.magnitude > 7){
+            return "purple"
+          } else {
+            return "lightgreen"
+          }
+        })                                                              //Changes color of quakes based on magnitude
         .on('mouseover', function ( datum ) {
           var $this = d3.select(this);
 
@@ -393,7 +412,10 @@
 
           d3.selectAll('.datamaps-hoverover').style('display', 'none');
         })
-        .transition().duration(400)                                             //changes time to put bubbles on screen
+        .transition().duration(2000).delay(function(d,i){
+          console.log(i);
+          return i * 100; 
+        })                                                              //changes time to put bubbles on screen
           .attr('r', function ( datum ) {
             return datum.magnitude;
           });

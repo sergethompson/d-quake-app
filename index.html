@@ -7,6 +7,7 @@
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="javascripts/datamaps_quake.all.js"></script>
     <script src="earthquake_2011_7_plus.js"></script>
+    <link rel="stylesheet" href="stylesheets/styles.css">
 	<title>Earthquake!</title>
 </head>
 <body>
@@ -40,15 +41,15 @@
         highlightOnHover: false
     },
     fills: {
-        'USA': '#1f77b4',
-        'QUAKE': '#9467bd',
-        'PRK': '#ff7f0e',
-        'PRC': '#2ca02c',
-        'IND': '#e377c2',
-        'GBR': '#8c564b',
-        'FRA': '#d62728',
-        'PAK': '#7f7f7f',
-        defaultFill: '#EDDC4E'
+        // 'USA': '#EDDC4E',
+        // 'QUAKE': '#9467bd',
+        // 'PRK': '#EDDC4E',
+        // 'PRC': '#EDDC4E',
+        // 'IND': '#EDDC4E',
+        // 'GBR': '#EDDC4E',
+        // 'FRA': '#EDDC4E',
+        // 'PAK': '#EDDC4E',
+        defaultFill: 'DarkKhaki '                                                       //Color of continents
     },
     data: {
         'QUAKE': {fillKey: 'QUAKE'},
@@ -82,15 +83,15 @@
     // ];
 
 
-    var quakes = eq_data.earthquakes
+    var quakes = eq_data.earthquakes.reverse();                                               //API Data. Reversed so that earliest earthquakes appear on the map first.
 
- console.log(eq_data);
+ console.log(eq_data); 
  
 //-------------------------- draw bubbles for quakes -----------------------------------
  
 earthquakeMap.bubbles(quakes, {
-    popupTemplate: function (geo, data) { 
-            return ['<div class="hoverinfo">' +  data.location,
+    popupTemplate: function (geo, data) {                                                   //Popup data info
+            return ['<div class="hoverinfo">' +  data.region,
             '<br/>Magnitude: ' +  data.magnitude,
             '<br/>Date & Time: ' +  data.timedate + '',
             '</div>'].join('');
