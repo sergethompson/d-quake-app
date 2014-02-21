@@ -339,10 +339,10 @@
         .append('svg:circle')
         .attr('class', 'datamaps-bubble')
         .attr('cx', function ( datum ) {
-          return self.latLngToXY(datum.latitude, datum.longitude)[0];
+          return self.latLngToXY(datum.lat, datum.lon)[0];
         })
         .attr('cy', function ( datum ) {
-          return self.latLngToXY(datum.latitude, datum.longitude)[1];
+          return self.latLngToXY(datum.lat, datum.lon)[1];
         })
         .attr('r', 0) //for animation purposes
         .attr('data-info', function(d) {
@@ -351,10 +351,11 @@
         .style('stroke', options.borderColor)
         .style('stroke-width', options.borderWidth)
         .style('fill-opacity', options.fillOpacity)
-        .style('fill', function ( datum ) {
-          var fillColor = fillData[ datum.fillKey ];
-          return fillColor || fillData.defaultFill;
-        })
+        // .style('fill', function ( datum ) {
+        //   var fillColor = fillData[ datum.fillKey ];
+        //   return fillColor || fillData.defaultFill;
+        // })
+        .style('fill', 'blue')
         .on('mouseover', function ( datum ) {
           var $this = d3.select(this);
 
@@ -392,9 +393,9 @@
 
           d3.selectAll('.datamaps-hoverover').style('display', 'none');
         })
-        .transition().duration(400)
+        .transition().duration(400)                                             //changes time to put bubbles on screen
           .attr('r', function ( datum ) {
-            return datum.radius;
+            return datum.magnitude;
           });
 
     bubbles.exit()
