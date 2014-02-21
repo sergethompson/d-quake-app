@@ -1,3 +1,15 @@
 body {
 	background-color: dimgray;
 }
+
+#time {
+	position: absolute;
+}
+
+#title {
+	text-align: center;
+	margin-left: 2em;
+	margin-bottom: -15px;
+	font-weight: 2;
+	font-family: 'Ceviche One';
+}

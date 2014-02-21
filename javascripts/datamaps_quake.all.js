@@ -415,10 +415,42 @@
         .transition().duration(2000).delay(function(d,i){
           console.log(i);
           return i * 100; 
+                                                    // time input attempt
         })                                                              //changes time to put bubbles on screen
           .attr('r', function ( datum ) {
-            return .45*Math.exp(datum.magnitude)/Math.exp(datum.magnitude*.45);
-          });
+
+            // d3.selectAll('#time').text(datum.magnitude)
+
+            return .45*Math.exp(datum.magnitude)/Math.exp(datum.magnitude*.45);  
+          })
+
+
+          var i = 0;
+        setInterval(function(){
+          $('#time').html(data[i].timedate);
+          i++;
+        }, 100)
+
+
+
+
+
+
+        // d3.selectAll('#time').data( data, JSON.stringify )
+        // //   .delay(function(d,i){
+        // //     console.log(i);
+        // //     return i * 100; 
+        // // })      
+        //   .text(function ( datum ) {
+        //     return datum.magnitude
+        //   });
+
+
+
+
+
+
+
 
     bubbles.exit()
       .transition()
