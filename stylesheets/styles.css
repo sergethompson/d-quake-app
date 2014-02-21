@@ -3,13 +3,17 @@ body {
 }
 
 #time {
+	top: 24px;
+	right: 20px;
 	position: absolute;
+	font-family: 'Economica', sans-serif;
+	font-size: 2em;
 }
 
 #title {
 	text-align: center;
-	margin-left: 2em;
 	margin-bottom: -15px;
 	font-weight: 2;
-	font-family: 'Ceviche One';
+/*	font-size: 2em;
+*/	font-family: 'Monoton', cursive;
 }
