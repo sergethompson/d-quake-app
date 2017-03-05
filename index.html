@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Ceviche+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Frijole|Monofett|Monoton|Economica' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -10,31 +10,31 @@
     <script src="javascripts/datamaps_quake.all.js"></script>
     <script src="earthquake_2011_7_plus.js"></script>
     <link rel="stylesheet" href="stylesheets/styles.css">
-	<title>Earthquake!</title>
+    <title>Earthquake!</title>
 </head>
 <body>
  
 <!-- ============================ Container Div for our World Map =============================(http://www.seismi.org/api/eqs/2011/?min_magnitude=5.5&limit=900)
  -->
  
- <!-- 	<div id="container" style="position: relative; width: 500px; height: 300px;"></div>
- -->	
+ <!--   <div id="container" style="position: relative; width: 500px; height: 300px;"></div>
+ -->    
 
     <div id="time"></div>
     <h1 id="title">Earthquakes 2011-2013</h1>
 
-	<div id="map_quakes" style="position: relative; width: 100%; height: 100%;"></div>
+    <div id="map_quakes" style="position: relative; width: 100%; height: 100%;"></div>
  
-	<script>
+    <script>
 //========================== Map w/o quakes ==================================
  
    //  var map = new Datamap({
-	  //   element: document.getElementById('container'),  
-	  //   scope: 'usa',
-	  //   fills: {
-	  //   	defaultFill: 'rgba(200,148,210,0.9)'
-	  //   }
-  	// });
+      //   element: document.getElementById('container'),  
+      //   scope: 'usa',
+      //   fills: {
+      //    defaultFill: 'rgba(200,148,210,0.9)'
+      //   }
+    // });
     
  
 //========================== Map w/ quakes ===================================
@@ -104,7 +104,7 @@ earthquakeMap.bubbles(quakes, {
     }
 });
 // $('#time').html("apples");
-	</script>
+    </script>
  
 </body>
 </html>
