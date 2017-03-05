@@ -2,6 +2,6 @@ This is a D3.js visualization app mapping earthquakes in the US over time. The a
 
 The app focuses on 2011 - 2013, which includes the 9.0 earthquake that caused a tsunami to hit Japan on 3/11/11. 
 
-To launch app, go to http://zacharydinerstein.github.io/Earthquakes
+To launch app, <a href="http://zacharydinerstein.github.io/Earthquakes">CLICK HERE</a>
 
 This program was built by Zachary Dinerstein (github.com/zackdinerstein , zackdhome@gmail.com) & Serge Thompson (github.com/sergethompson , sergethompson@gmail.com) in 2014.
