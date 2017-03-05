@@ -1,3 +1,6 @@
+/* ============================ Target All Browsers ==================== */
+
+
 body {
 	background-color: dimgray;
 }
@@ -12,8 +15,27 @@ body {
 
 #title {
 	text-align: center;
-	margin-bottom: -15px;
 	font-weight: 2;
-/*	font-size: 2em;
-*/	font-family: 'Monoton', cursive;
+	font-family: 'Monoton', cursive;
+}
+
+#map_quakes {
+	position: relative;
+	height: 100%;
+	width: 1424px;
+	top: 267px;
+}
+
+svg.datamap {
+	overflow: visible;
+	height: 100%;
+}
+
+
+/* ======================= Target Only Firefox Browsers ================ */
+
+@-moz-document url-prefix() { 
+    #map_quakes {
+        top: 270px;
+    }
 }
